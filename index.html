@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple Org Chart Viewer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <div>
+    <div>
+      <h1>Simple Organization Chart Viewer</h1>
+      <p>This page can create a rudimentary organization chart based on the data in a .csv file.</p>
+      <div id="user-input">
+        <div>
+            Choose a .csv file to load the organization chart from:
+            <input type="file" id="csv-file"/>
+        </div>
+        <div>
+          <label for="chart-for">Filter the chart to this person and their direct reports:</label>
+          <input type="text" id="chart-for"/>
+          <input type="button" value="Redraw Chart" id="reload-chart"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
