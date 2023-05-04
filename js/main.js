@@ -15,8 +15,7 @@ filterInput.addEventListener('change', () => {
 });
 
 fileInput.addEventListener('change', () => {
-  parseCsv(fileInput.files[0], reader, fileState);
-  drawChart(fileState.data, filterState, chartDiv);
+  parseCsv(fileInput.files[0], reader, fileState, drawChart);
 });
 
 reloadButton.addEventListener('click', () => {
@@ -28,11 +27,12 @@ function setFilterState(state, value) {
   state.push(value);
 }
 
-function parseCsv(file, reader, fileState) {
+function parseCsv(file, reader, fileState, drawFunction) {
   reader.onload = () => {
     Papa.parse(file, {
       complete: function (results) {
         fileState.data = results.data;
+        drawFunction(fileState.data, filterState, chartDiv);
       }
     })
   };
